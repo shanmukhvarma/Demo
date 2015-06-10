@@ -1,0 +1,103 @@
+<div style="width:100%;margin-left:434px;">
+<%= form_for @member ,:url => {:action => "create"}, :method => 'post' do |f| %>
+
+
+ <table  cellpadding="0" cellspacing="0" class="formtable"  width="100% ">
+                 <tr>
+                     <td width="10%" height="40px">
+                     <%= f.label :Username %>
+                     </td>
+                     <td width="90%">
+                     <%= f.text_field :name %>
+                     
+                     <!-- <input type="text" name="name" id="name"> -->
+                     </td>
+                 </tr>
+         
+                 <tr>
+                     <td width="10%" height="40px">
+                     	<%= f.label :password %>
+                     </td>
+                     <td>
+                        <%= f.text_field :password_hash %>
+                     <!-- <input type="text" name="email" id="email"> --></td>
+                 </tr>
+           
+                 <tr>
+                     <td width="10%" height="40px">conform password</td>
+                     <td>
+                        <%= f.text_field :password_hash %>
+                        <!-- <input type="text" name="city" id="city"> -->
+                    </td>   
+                 </tr>
+
+                  <tr>
+                     <td width="10%" height="40px">
+                     	<%= f.label :Gender %>
+                     </td>
+                     <td>
+                        	<%= f.radio_button :gender, 'male' %> Male
+                        	<%= f.radio_button :gender, 'female' %>Female
+                        <!-- <input type="text" name="state" id="state"> -->
+                     </td>
+                 </tr>
+
+
+                
+                 <tr>
+                     <td width="10%" height="40px">email</td>
+                     <td>
+                              <%= f.text_field :email %>
+                        <!-- <input type="text" name="phno" id="phno"> -->
+                    </td>
+                 </tr>
+
+               
+                 <tr>
+                     <td width="10%" height="40px">city:</td>
+                     <td>
+                     	
+                        
+              <%= f.select(:city, [["vizag",'vizag' ], ["vsp",'vsp'], ["Advanced",'Advanced'], ["Expert", 'Expert']])%>
+                  </td>
+                 </tr>
+
+                 
+                 <tr>
+                     <td width="10%" height="40px">hobbies:</td>
+                     <td>
+
+                     	<%= f.check_box("hobbies",  { }, 'cricket') %>cricket
+                     	<%= f.check_box("hobbies",  { }, 'tv') %>tv
+                     	<%= f.check_box("hobbies",  { }, 'chess') %>chess
+                        <!-- <text_area_ rows="4" cols="50" name="addr" id="addr"></textarea>
+  -->                </td>
+                 </tr> 
+
+                 <tr>
+                     <td width="10%" height="40px">image:</td>
+                     <td>
+                         <%= f.file_field :image %>
+                     </td>
+                 </tr>
+
+
+
+
+                 <tr>
+                     <td  width="10%" height="40px"></td>
+                     <td>
+                        <%= f.submit 'submit' %>
+                    <!--  <input type="Submit" value="confirm submission"> -->
+                    </td>
+                 </tr>
+
+           </table>
+	
+
+
+<% end %>
+
+</div>
+
+		

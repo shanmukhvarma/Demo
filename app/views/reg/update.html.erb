@@ -1,0 +1,96 @@
+<div class="wrapper">
+
+       
+
+         
+                  
+            
+      <h3 style="margin-left:134px;">REGISTERTION FORM</h3>
+       <p style="margin-left:149px;">Fill The Form Given Below</p>
+      
+                      
+    <%= form_tag reg_updatecreate_path , :method => "post" do |f| %>
+
+            
+       
+           <table cellpadding="0" cellspacing="0" class="formtable" width="100% ">
+                 <tr>
+                    <!-- <input type="hidden" name="fgh" id="fbhd" value="sdgfs"> -->
+                    <%= hidden_field_tag 'id', @regdata.id  %>
+                     <td width="10%" height="40px">Username:</td>
+                     <td width="90%">
+                     <%= text_field_tag 'name', @regdata.name %>
+                     <!-- <input type="text" name="name" id="name"> -->
+                     </td>
+                 </tr>
+         
+                 <tr>
+                     <td width="10%" height="40px">Email:</td>
+                     <td>
+                        <%= text_field_tag 'email',@regdata.email%>
+                     <!-- <input type="text" name="email" id="email"> --></td>
+                 </tr>
+           
+                 <tr>
+                     <td width="10%" height="40px">city:</td>
+                     <td>
+                        <%= text_field_tag 'city',@regdata.city %>
+                        <!-- <input type="text" name="city" id="city"> -->
+                    </td>   
+                 </tr>
+
+                  <tr>
+                     <td width="10%" height="40px">state:</td>
+                     <td>
+                        <%= text_field_tag 'states',@regdata.states %>
+                        <!-- <input type="text" name="state" id="state"> -->
+                     </td>
+                 </tr>
+
+
+                
+                 <tr>
+                     <td width="10%" height="40px">Phone no:</td>
+                     <td>
+                        <%= text_field_tag 'phno',@regdata.phno %>
+                        <!-- <input type="text" name="phno" id="phno"> -->
+                    </td>
+                 </tr>
+
+               
+                 <tr>
+                     <td width="10%" height="40px">Address:</td>
+                     <td>
+                     <%= text_area_tag 'addr',@regdata.addr %>
+                        <!-- <text_area_ rows="4" cols="50" name="addr" id="addr"></textarea>
+  -->                   </td>
+                 </tr>
+
+                
+
+
+                 
+
+                 <tr>
+                     <td  width="10%" height="40px"></td>
+                     <td>
+                        <%= submit_tag 'submit' %>
+                    <!--  <input type="Submit" value="confirm submission"> -->
+                    </td>
+                 </tr>
+
+           </table>
+    <% end %>
+      
+
+       <%
+            unless flash[:msg].nil?
+        %>       
+                    <%= flash[:msg] %>
+        <%
+            end
+         %>
+
+      </div>
+
+           

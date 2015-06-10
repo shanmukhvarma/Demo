@@ -1,0 +1,70 @@
+<h1>list register</h1>	
+
+		<table >
+       		<tr>
+       			<td>name</td>
+       			<td>email</td>
+       			<td>city</td>
+       			<td>state</td>
+       			<td>phone number</td>
+       			<td>Address</td>
+
+       			<td>EDIT</td>
+       			<td>DElete</td>
+       			<td>Show</td>
+       		</tr>
+    <%# unless @regusers.empty? %>
+       	<%# @regusers.each do |f| %>
+       		<tr>
+       			<td><%= @reg.name %></td>
+       			<td><%= @reg.email %></td>
+       			<td><%= @reg.city %></td>
+       			<td><%= @reg.states %></td>
+       			<td><%= @reg.phno %></td>
+       			<td><%= @reg.addr %></td>
+       			
+       			<td>
+       				<%= link_to (image_tag 'edit.jpg', :style => "width:50px; height:50px;"), regupdate_path(@reg.id) %>
+       			</td>
+
+       			<td>
+       				<%= link_to (image_tag 'delete.jpg', :style => "width:50px; height:50px;"), regdelete_path(@reg.id)  %>
+              
+
+       			</td>
+				</tr>
+     
+    <%# else %>
+    	<!-- <tr align="center">
+    		<td colspan="8">No Records</td>
+    	</tr> -->
+    <%# end %>
+
+    
+       </table>
+       <h1>Comments	</h1>
+       <% @coment.each do |f| %>
+       <p><label>title:<%=f.title %></label></p>
+
+       		
+       		<p><label>mesage:<%=f.message %></label></p>
+       				
+       						<%end %>
+      <!-- --------------------------comment--------------------- -->
+
+    <%=form_tag comntcreat_path( @reg.id) do |f|%>
+
+    <p>
+    	<label>
+    		Title:
+    	</label>
+                     <%= text_field_tag 'title','' %>
+              	<label>
+    		Message:
+    	</label>  
+    	                     <%= text_area_tag 'message','' %>
+         
+    </p>
+    		<%=submit_tag "submit" %>
+    		<%end %>
+      <!-- --------------------------comment--------------------- -->

@@ -1,0 +1,41 @@
+<div class="wrapper">
+            
+      <h3 style="margin-left: 49px;">View the records</h3>
+       <!-- <p style="margin-left:149px;">Fill The Form Given Below</p> -->
+       <table width="200" height="50" border="1" style="margin-top: 47px;margin-left: -158px;">
+          <tr>
+            <td>name</td>
+            
+            <td>gender</td>
+            <td>email</td>
+            <td>city</td>
+            <td>image</td>
+            
+    <% unless @membersusers.empty? %>
+        <% @membersusers.each do |f| %>
+          <tr>
+            <td><%= f.name %></td>
+            
+            <td><%= f.gender %></td>
+            <td><%= f.email %></td>
+            <td><%= f.city %></td>
+
+            <td>
+         
+          
+            <%= image_tag f.image.thumb('400x400#').url   %>
+        
+          </td>
+      
+        </tr>
+        <% end %>
+    <% else %>
+      <tr align="center">
+        <td colspan="8">No Records</td>
+      </tr>
+    <% end %>
+
+    
+       </table>
+ </div>
+
